@@ -63,7 +63,7 @@ module MetaInspector
         end
 
         faraday.headers.merge!(@headers || {})
-        faraday.adapter :net_http
+        faraday.adapter :net_http_persistent
       end
 
       response = session.get do |req|
